@@ -1,0 +1,187 @@
+#mydiv {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+}
+
+#mydivheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffc8c8;
+}
+
+.container {
+  height: 3.125em;
+  width: 3.125em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  /**border-style: solid;
+  border-color: red;**/
+}
+.squid {
+  height: 18.75em;
+  width: 18.75em;
+  background: linear-gradient(#f01c8a, #f53e2f);
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  animation: swim 3s infinite;
+}
+@keyframes swim {
+  50% {
+    transform: translateY(0.625em) scaleY(0.95);
+  }
+}
+@keyframes leg1{
+  50%{
+    transform: rotate(30deg);
+  }
+}
+@keyframes leg2{
+  50%{
+    transform: rotate(-30deg);
+  }
+}
+.squid:before {
+  content: "";
+  position: absolute;
+  height: 2.5em;
+  width: 2.5em;
+  background-color: #cd0856;
+  border-radius: 50%;
+  top: 11.25em;
+  left: 3.75em;
+  box-shadow: 8.75em 0 #cd0856;
+}
+.squid:after {
+  content: "";
+  position: absolute;
+  height: 3.75em;
+  width: 3.75em;
+  background-color: #000000;
+  border: 0.62em solid #ffffff;
+  border-radius: 50%;
+  top:7.5em;
+  left:3.75em;
+  box-shadow: 6.25em 0 0 -0.62em #000000, 6.25em 0 #ffffff;
+}
+
+.tentacle {
+  height: 7.5em;
+  width: 3.75em;
+  background-color: #f53e2f;
+  border-radius: 0.312em;
+  position: absolute;
+  left: 7.5em;
+  top: 16.87em;
+  z-index: -2;
+}
+.tentacle:before,
+.tentacle:after {
+  position: absolute;
+  content: "";
+  height: 12.5em;
+  width: 3.75em;
+  background-color: #f53e2f;
+  border-radius: 3.12em;
+  bottom: 0;
+}
+.tentacle:before {
+  transform: rotate(-60deg);
+  left: 3.12em;
+  animation: leg1 3s infinite;
+}
+.tentacle:after {
+  transform: rotate(60deg);
+  left: -3.12em;
+  animation: leg2 3s infinite;
+}
+@media screen and (min-width: 800px) {
+  .container {
+    font-size: 0.12em;
+  }
+}
+.button-container {
+  position: relative;
+  width: 36px;
+  height: 50px;
+  margin-left: 0px;
+  margin-right: auto;
+  margin-top: 0px;
+  overflow: hidden;
+  transition: 0.5s;
+  /*border: 1px solid rgba(255, 255, 255, 0.2);8*/
+}
+
+.button-container button {
+  width: 101%;
+  height: 100%;
+  font-family: "Monument Extended", sans-serif;
+  font-size: 4px;
+  background: /*#cd0856*/#ffc8c8;
+  -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  -webkit-mask-size: 2300% 100%;
+  mask-size: 2300% 100%;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  animation: anim2 0.7s steps(22) forwards;
+}
+
+.button-container button:active {
+  animation: anim1 0.7s steps(22) ;
+}
+
+.mask {
+  position: absolute;
+  color: #00f;
+  text-align: center;
+  width: 101%;
+  font-family: "Monument Extended", sans-serif;
+  font-weight: lighter;
+  font-size: 40px;
+  margin-top: 25px;
+  overflow: hidden;
+}
+
+@keyframes anim1 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+@keyframes anim2 {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
